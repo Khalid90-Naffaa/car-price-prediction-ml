@@ -1,39 +1,58 @@
-# Sports Car Price Prediction
+🚗 Car Price Prediction (Machine Learning)
 
-## Setup
+End-to-end machine learning pipeline for predicting used sports car prices based on a real-world Kaggle dataset.
 
-```bash
+The project covers data preprocessing, feature engineering, model training, evaluation, and deployment through an interactive Streamlit web application.
+
+⸻
+
+📊 Model Performance (Test Set)
+	•	R²: 0.918
+	•	MAE: $51,795
+	•	RMSE: $222,564
+	•	MAPE: 11.16%
+
+The model explains over 91% of the variance in car prices, demonstrating strong predictive performance.
+
+⸻
+
+🔍 Technical Highlights
+	•	Cleaned and preprocessed real-world dataset
+	•	Feature engineering and transformation
+	•	Random Forest regression model
+	•	Model evaluation using MAE, RMSE, R², and MAPE
+	•	Model artifact persistence using joblib
+	•	Interactive dashboard built with Streamlit
+
+⸻
+
+🛠 Tech Stack
+
+Python • Pandas • NumPy • Scikit-learn • Matplotlib • Seaborn • Streamlit
+
+⸻
+
+📂 Project Structure
+	•	train_model.py – Model training pipeline
+	•	app.py – Streamlit web application
+	•	requirements.txt – Project dependencies
+	•	model_artifacts/ – Saved model and evaluation outputs
+
+⸻
+
+▶ Run Locally
+
+Install dependencies:
+
 pip install -r requirements.txt
-```
 
-## 1. Train model and save outputs
+Run the application:
 
-```bash
-python train_model.py
-```
-
-This will create:
-
-| Output | Description |
-|--------|-------------|
-| **model_artifacts/model.joblib** | Trained Random Forest model |
-| **model_artifacts/scaler.joblib** | Feature scaler |
-| **model_artifacts/label_encoder_make.joblib** | Brand encoder |
-| **model_artifacts/feature_cols.joblib** | Feature names |
-| **model_artifacts/test_predictions.csv** | Test set with actual vs predicted prices and difference |
-| **model_artifacts/model_evaluation_metrics.json** | Train/test MAE, RMSE, R², MAPE (separate file) |
-| **model_artifacts/model_evaluation_metrics.csv** | Same metrics in CSV (separate file) |
-| **model_artifacts/visualizations/** | All plots saved as PNG files (separate files): |
-| → 01_actual_vs_predicted_scatter.png | Scatter: actual vs predicted |
-| → 02_actual_vs_predicted_line.png | Line chart: first 50 cars |
-| → 03_error_by_brand_bar.png | Bar: mean error by brand |
-| → 04_prediction_difference_bars.png | Bar: over/under per car |
-| → 05_residuals_histogram.png | Histogram of errors |
-
-## 2. Run the interface
-
-```bash
 streamlit run app.py
-```
 
-The app shows model accuracy, prediction differences, performance metrics (loaded from the saved JSON/CSV), and the saved visualizations.
+⸻
+
+📈 Deployment
+
+The model is deployed as an interactive Streamlit application that allows users to explore predictions and performance metrics.
+
